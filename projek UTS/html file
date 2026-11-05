@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper & Ink Studio - Modern Stationery Catalog</title>
+    <link rel="stylesheet" href="uts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-pen-nib"></i> Paper & Ink
+        </div>
+        <nav class="nav-links">
+            <a href="#hero">Beranda</a>
+            <a href="#katalog">Katalog</a>
+            <a href="#about">Tentang</a>
+        </nav>
+        <div class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Temukan Estetika dalam Setiap Tulisan</h1>
+            <p>Koleksi buletin, alat tulis pastel, dan aksesori meja kerja pilihan untuk meningkatkan produktivitasmu.</p>
+            <a href="#katalog" class="btn-primary">Lihat Katalog</a>
+        </div>
+    </section>
+
+    <!-- Main Catalog Section -->
+    <main id="katalog" class="catalog-container">
+        <h2>Katalog Produk</h2>
+
+        <!-- Controls Bar -->
+        <div class="controls-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Cari stationery...">
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="notebook">Notebook</button>
+                <button class="filter-btn" data-category="writing">Alat Tulis</button>
+                <button class="filter-btn" data-category="desk">Aksesori Meja</button>
+            </div>
+
+            <div class="sort-box">
+                <select id="sort-select">
+                    <option value="default">Urutkan Harga</option>
+                    <option value="low-high">Harga: Murah ke Mahal</option>
+                    <option value="high-low">Harga: Mahal ke Murah</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Daftar Produk Langsung di HTML -->
+        <div class="product-grid" id="product-grid">
+
+            <!-- Produk 1 -->
+            <div class="product-card" data-category="notebook" data-title="A5 Aesthetic Bullet Journal" data-price="45000">
+                <img src="images/notebook.jpg" alt="A5 Aesthetic Bullet Journal" class="product-img">
+                <span class="badge">notebook</span>
+                <h3 class="product-title">A5 Aesthetic Bullet Journal</h3>
+                <p class="price">Rp 45.000</p>
+                <p class="desc-hidden" style="display:none;">Jurnal grid 160 halaman kertas tebal 100 gsm anti-bleed, cocok untuk lettering & journaling.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card" data-category="writing" data-title="Pastel Gel Pen Set (6 Warna)" data-price="32000">
+                <img src="images/pulpen.jpg" alt="Pastel Gel Pen Set" class="product-img">
+                <span class="badge">writing</span>
+                <h3 class="product-title">Pastel Gel Pen Set (6 Warna)</h3>
+                <p class="price">Rp 32.000</p>
+                <p class="desc-hidden" style="display:none;">Pulpen gel tinta hitam 0.5mm halus dengan bodi warna pastel elegan.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card" data-category="writing" data-title="Soft Pastel Highlighter Set" data-price="28000">
+                <img src="images/highlighter.jpg" alt="Soft Pastel Highlighter Set" class="product-img">
+                <span class="badge">writing</span>
+                <h3 class="product-title">Soft Pastel Highlighter Set</h3>
+                <p class="price">Rp 28.000</p>
+                <p class="desc-hidden" style="display:none;">Stabilo warna lembut anti silau, cocok untuk menandai modul kuliah.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card" data-category="notebook" data-title="Grid Loose Leaf B5" data-price="18000">
+                <img src="images/isibinder.jpg" alt="Grid Loose Leaf B5" class="product-img">
+                <span class="badge">notebook</span>
+                <h3 class="product-title">Grid Loose Leaf B5</h3>
+                <p class="price">Rp 18.000</p>
+                <p class="desc-hidden" style="display:none;">Isi binder kotak-kotak 100 lembar warna cream yang nyaman di mata.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="product-card" data-category="desk" data-title="Wooden Desk Organizer" data-price="78000">
+                <img src="images/organizer.jpg" alt="Wooden Desk Organizer" class="product-img">
+                <span class="badge">desk</span>
+                <h3 class="product-title">Wooden Desk Organizer</h3>
+                <p class="price">Rp 78.000</p>
+                <p class="desc-hidden" style="display:none;">Tempat menyimpan pulpen dan stationery dari bahan kayu pinus minimalis.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="product-card" data-category="desk" data-title="Minimalist Brass Ruler 15cm" data-price="25000">
+                <img src="images/ruler.jpg" alt="Minimalist Brass Ruler 15cm" class="product-img">
+                <span class="badge">desk</span>
+                <h3 class="product-title">Minimalist Brass Ruler 15cm</h3>
+                <p class="price">Rp 25.000</p>
+                <p class="desc-hidden" style="display:none;">Penggaris kuningan tahan lama dengan gaya vintage minimalis 15cm.</p>
+                <div class="card-actions">
+                    <button class="btn-secondary btn-detail">Detail</button>
+                    <button class="btn-add-cart" onclick="addToCart()">+ Keranjang</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image" id="modal-img"></div>
+                <div class="modal-info">
+                    <span class="badge" id="modal-category">Kategori</span>
+                    <h3 id="modal-title">Nama Produk</h3>
+                    <p class="price" id="modal-price">Rp 0</p>
+                    <p class="description" id="modal-desc">Deskripsi produk.</p>
+                    <button class="btn-primary" onclick="addToCart(); modal.style.display='none';">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Paper & Ink Studio. Tugas Pemrograman Web Interaktif.</p>
+    </footer>
+
+    <script src="uts.js"></script>
+</body>
+</html>
